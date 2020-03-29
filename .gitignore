@@ -1,0 +1,11 @@
+/node_modules
+/react-frontend/config
+/react-frontend/node_modules
+/react-frontend/scripts
+/react-frontend/yarn.lock
+/static/react
+/static/vendor
+/templates
+venv.code-workspace
+
+
