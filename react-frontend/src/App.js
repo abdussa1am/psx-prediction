@@ -68,19 +68,21 @@ class App extends Component {
 class App extends Component {
 
   state = {
-    contacts: []
+    response: []
   }
   componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ contacts: data })
+    fetch('https://fcsapi.com/api-v2/stock/list?indices_id=1&access_key=YON9guMpjGdHapymnGbCOpBOvAtIMbsINqH866bXpgOvxHavTU')
+    .then(response => response.json())
+    .then((res) => {
+      const { response } = res
+      console.log(response)
+      this.setState({ response })
     })
     .catch(console.log)
   }
   render() {
     return (
-      <Contacts contacts={this.state.contacts} />
+      <Contacts response={this.state.response} />
     )
   }
 }
